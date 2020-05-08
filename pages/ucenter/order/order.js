@@ -21,9 +21,11 @@ Page({
       }
     });
   },
-  payOrder(){
+  payOrder(event){
+    console.log(event);
+    const data = JSON.stringify(event.target.dataset.item)
     wx.redirectTo({
-      url: '/pages/pay/pay',
+      url: '/pages/pay/pay?data='+data,
     })
   },
   onReady:function(){

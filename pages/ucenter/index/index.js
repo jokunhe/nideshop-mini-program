@@ -52,6 +52,8 @@ Page({
   },
 
   onWechatLogin(e) {
+    console.log(e);
+    
     if (e.detail.errMsg !== 'getUserInfo:ok') {
       if (e.detail.errMsg === 'getUserInfo:fail auth deny') {
         return false

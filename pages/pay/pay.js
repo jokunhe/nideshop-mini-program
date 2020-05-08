@@ -9,9 +9,12 @@ Page({
   },
   onLoad: function (options) {
     // 页面初始化 options为页面跳转所带来的参数
+    const data = JSON.parse(options.data)
+    console.log(data);
+    
     this.setData({
-      orderId: options.orderId,
-      actualPrice: options.actualPrice
+      orderId: data.id,
+      actualPrice: data.actual_price
     })
   },
   onReady: function () {
@@ -32,7 +35,11 @@ Page({
   //向服务请求支付参数
   requestPayParam() {
     let that = this;
+    console.log(that.data);
+    
     util.request(api.PayPrepayId, { orderId: that.data.orderId, payType: 1 }).then(function (res) {
+      console.log(res);
+      
       if (res.errno === 0) {
         let payParam = res.data;
         wx.requestPayment({

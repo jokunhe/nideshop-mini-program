@@ -35,7 +35,7 @@
 
 .goods-info {
   width: 750rpx;
-  height: 306rpx;
+  /* height: 306rpx; */
   overflow: hidden;
   background: #fff;
 }
@@ -96,6 +96,27 @@
   background-size: 10.75rpx 18.75rpx;
 }
 
+.goods-info .rowview{
+  display: flex;
+  flex-flow: row;
+  justify-content:flex-start;
+}
+
+.goods-info .rowview .item{
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  margin-right: 30rpx;
+}
+
+.goods-info .rowview .item .price{
+  font-size: 28rpx;
+}
+
+.goods-info .rowview .item .number{
+  font-size: 20rpx;
+}
 .section-nav {
   width: 750rpx;
   height: 108rpx;
@@ -692,6 +713,11 @@
 .spec-con .value.selected {
   border: 1px solid #b4282d;
   color: #b4282d;
+}
+
+.number-item .name {
+  font-size: 25rpx;
+  line-height: 25rpx;
 }
 
 .number-item .selnum {
